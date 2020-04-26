@@ -1,0 +1,366 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{graphics}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\begin{document}
+
+\title{Plano perpendicular a la intersección de dos planos}
+\author{Juan Vicente Vía Baylet}
+\maketitle
+
+\begin{abstract}
+  Vamos a ver una manera de resolver un ejercicio en donde se busca el plano perpendicular a la
+  intersección entre dos planos y que pase por un punto dado.
+  Esta resolución cumple con las condiciones de que no se usen matrices y
+  de que no se use el producto vectorial.
+\end{abstract}
+
+
+\section{El problema}
+
+
+Se consideran los planos $\Pi$ $\rightarrow$  $4x-y+3z=2$ y $\Pi'$ $\rightarrow$ $2x+2y-z=6$.
+Hallar la ecuación de un plano que sea ortogonal a $\Pi\cap\Pi'$ y que pase por $(4,2,-1)$.
+
+
+\section{La solución}
+
+
+
+\subsection{Bautismos}
+
+
+Para solucionar un problema es generalmente útil comenzar asegurándose de que las cosas
+estén bien identificadas y tengan un nombre. Entonces\dots
+
+\textbf{Vamos a llamar \textbf{$\Lambda^\cap$} a la recta intersección $\Pi\cap\Pi'$.} Nuestra misión es encontrarla para que nos ayude
+a llegar al plano buscado.
+
+\textbf{Vamos a llamar $\Pi^\perp$ al plano buscado}, el único entre los infinitos
+planos perpendiculares a {$\Lambda^\cap$} que pasa por el punto $(4,2,-1)$.
+
+Tengamos presentes además las ecuaciones que definen los planos originales del problema:
+
+\begin{gather}
+  \Pi \rightarrow 4x-y+3z=2 \label{eq:planopi}\\
+  \Pi'\rightarrow x+2y-z=6 \label{eq:planopiprima}
+\end{gather}
+
+Vamos a referirnos frecuentemente a estas ecuaciones como \textbf{la ecuación (\ref{eq:planopi})} y \textbf{la ecuación (\ref{eq:planopiprima})}
+
+
+\subsection{Método}
+
+
+\begin{enumerate}
+  \item Primero vamos a encontrar la intersección $\Lambda^\cap$ de los dos planos: $\Pi$ y $\Pi'$:
+  \item Luego vamos a encontrar la ecuación de los planos ortogonales a $\Lambda^\cap$ y
+        entre ellos seleccionar $\Pi^\perp$, el que pasa por $(4,2,-1)$.
+\end{enumerate}
+
+
+\subsection{La intersección $\Lambda^\cap$}
+
+
+Como la intersección $\Lambda^\cap$ está en ambos planos $\Pi$ y $\Pi'$ sus puntos deben cumplir simultáneamente
+con las ecuaciones que los definen, es decir:
+
+$$
+  \Lambda^\cap = (x,y,z) \in \mathbb{R}^3  \text{ para los cuales se cumplen}
+  \begin{cases}
+    4x-y+3z=2 \text{} \\
+    2x+2y-z=6 \text{} \\
+  \end{cases}
+$$
+
+Eso es una recta. Vamos a expresar la recta en forma paramétrica.
+Buscamos entonces $x=f_x(\lambda)$, $y=f_y(\lambda)$ y $z=f_z(\lambda)$ a partir de la anterior restricción que nos permitan calcular
+los puntos de esta recta intersección $\Lambda^\cap$ en función de un parámetro $\lambda$.
+
+
+\subsubsection{Operaciones para poner $x$, $y$ y $z$ en función de $\lambda$. Obtención de la forma paramétrica de la recta de intersección $\Lambda^\cap$.}
+
+
+Recordemos que partimos de
+$$
+  \Lambda^\cap = (x,y,z) \in \mathbb{R}^3  \text{ para los cuales se cumplen}
+  \begin{cases}
+    4x-y+3z=2 \text{} \\
+    2x+2y-z=6 \text{}
+  \end{cases}
+$$
+Decidimos tomar $\lambda$ como parámetro y hacemos $\lambda = x$. Obtenemos así directamente la primera de
+las ecuaciones paramétricas de $\Lambda^\cap$, la de $x$:
+\begin{flalign}
+  x = \lambda \label{eq:xdelamda}
+\end{flalign}
+\begin{flalign}
+  \textnormal{Por la ecuación } (\ref{eq:planopiprima}) && 2x+2y-z&=6       && \notag \\
+  \textnormal{Despejamos } z                            && z&=2x+2y-6       && \notag \\
+  \textnormal{Usando (\ref{eq:xdelamda})}               && z&=2\lambda+2y-6 && \label{eq:zdelamdaey}
+\end{flalign}
+
+\begin{flalign}
+  \textnormal{Por la ecuación } (\ref{eq:planopi})     && 4x-y+3z&=2                           && \notag \\
+  \textnormal{Usando (\ref{eq:xdelamda})}              && 4\lambda-y+3z&=2                     && \notag \\
+  \textnormal{Usando (\ref{eq:zdelamdaey})}            && 4\lambda-y+3(2\lambda+2y-6)&=2       && \notag \\
+  \textnormal{Distribuyendo}                           && 4\lambda-y+6\lambda+6y-18&=2         && \notag \\
+  \textnormal{Agrupando y sumando}                     && 10\lambda+5y-18&=2                   && \notag \\
+  \textnormal{Aislando } y                             && 5y&=2+18-10\lambda                   && \notag \\
+  \textnormal{Agrupando y sumando}                     && 5y&=-10\lambda+20                    && \notag \\
+  \textnormal{Dividiendo por 5}                        && y&=-2\lambda + 4 \label{eq:ydelamda} &&
+\end{flalign}
+
+
+Sólo queda $z$ para resolver
+\begin{flalign}
+  \textnormal{Por la ecuación (\ref{eq:zdelamdaey})}   && z &= 2\lambda+2y-6                   && \notag \\
+  \textnormal{Usando (\ref{eq:ydelamda})}              && z &= 2\lambda+ 2(-2\lambda + 4)-6    && \notag \\
+  \textnormal{Distribuyendo}                           && z &= 2\lambda-4\lambda + 8-6         && \notag \\
+  \textnormal{Agrupando y sumando}                     && z &= -2\lambda+2 \label{eq:zdelamda} &&
+\end{flalign}
+
+Resumiendo: en las ecuaciones (\ref{eq:xdelamda}), (\ref{eq:ydelamda}) y (\ref{eq:zdelamda}) hemos hallado
+la forma de obtener las coordenadas de los puntos de $\Lambda^\cap$ en función del parámetro $\lambda$:
+\begin{flalign*}
+  x &= \lambda && \\
+  y &= -2\lambda + 4 && \\
+  z &= -2\lambda+2 &&
+\end{flalign*}
+$
+  \textnormal{Entonces } \Lambda^\cap = {(x,y,z),\lambda } \in \mathbb{R}^3  \text{ para los cuales se cumple: } \forall{\lambda}
+  \begin{cases}
+    x = \lambda       \\
+    y = -2\lambda + 4 \\
+    z = -2\lambda+2
+  \end{cases}
+$
+
+Por fin llegamos a nuestra recta intersección $\Lambda^\cap$:
+\begin{flalign}
+  \Lambda^\cap =
+  \{
+  (x,y,z) \in  \mathbb{R}^3 \mid \forall \lambda \in \mathbb{R}: (
+  x = \lambda,
+  y = -2\lambda + 4,
+  z = -2\lambda+2 )
+  \}
+\end{flalign}
+
+
+\subsubsection{Forma vectorial de $\Lambda^\cap$ en función de $\lambda$}
+
+
+Si tomamos
+$\vec{x} = (x, y, z)$,
+$\vec{u} = (0,4,2)$ y
+$\vec{v} = (1,-2,-2)$
+el conjunto de ecuaciones anterior se puede expresar como:
+$$\vec{x} = \vec{u} + \lambda\vec{v}$$\\
+O, en la extraña notación de los profesores de tu alumna ($\vec{x} = [\vec{v}] + \vec{u}$)`:
+$$
+  \vec{x} = [(1,-2,-2)] + (0,4,2)
+$$
+
+
+\subsubsection{Verificación de que $\Lambda^\cap$ es realmente la intersección entre $\Pi$ y $\Pi'$}
+Sabemos que para cada $x$, para cada $y$ y para cada $z$ en $\Lambda^\cap$ también se
+cumplen las condiciones impuestas por los planos $\Pi$ $\rightarrow$  $4x-y+3z=2$ y $\Pi'$ $\rightarrow$ $2x+2y-z=6$.
+Esto se debe, recordemos, al hecho de que, al ser $\Lambda^\cap$ la intersección entre
+dichos planos sus puntos están en ambos.
+Cualquiera que sea $\lambda$ se deben cumplir, entonces, todas las ecuaciones involucradas
+en las definiciones de $\Lambda^\cap$, $\Pi$ y $\Pi'$.
+
+Comencemos verificando el plano $\Pi$ $\rightarrow$  $4x-y+3z=2$. Usando la definición hallada de $\Lambda^\cap$ podemos
+reemplazar las coordenadas por sus correspondientes funciones de $\lambda$:
+\begin{flalign*}
+  4x-y+3z&=2 \\
+  4(\lambda)-(-2\lambda + 4)+3(-2\lambda+2)&=2 \\
+  4\lambda+2\lambda-6\lambda+6-4&=2 \\
+  2&=2
+\end{flalign*}
+
+El reemplazo de las coordenadas en el plano $\Pi$ $\rightarrow$  $4x-y+3z=2$ por las funciones de $\Lambda^\cap$ nos llevó por buen
+camino. Ahora podemos afirmar, sin temor a equivocarnos, que $2=2$. ¿Podemos decir lo mismo
+en el caso del plano $\Pi'$ $\rightarrow$ $2x+2y-z=6$? Veamos:
+\begin{flalign*}
+  2x+2y-z&=6 \\
+  2(\lambda)+2(-2\lambda+4)-(-2\lambda+2)&=6 \\
+  2\lambda-4\lambda+8+2\lambda-2&=6 \\
+  2\lambda-4\lambda+2\lambda+8-2&=6 \\
+  6&=6
+\end{flalign*}
+
+¡Perfecto! Matamos tres pájaros de un tiro: No solo verificamos que $\Lambda^\cap = \Pi \cap \Pi'$ sino que
+además aprendimos que $2=2$ y $6=6$.
+
+
+\subsubsection{Conclusión de la búsqueda de la intersección $\Lambda^\cap$}
+
+
+$$\Lambda^\cap =
+  \{
+  (x,y,z) \in  \mathbb{R}^3 \mid \forall \lambda \in \mathbb{R}: (
+  x = \lambda,
+  y = -2\lambda + 4,
+  z = -2\lambda+2 )
+  \}
+$$
+
+
+\subsection{Plano tangente $\Pi^\perp$ a la intersección $\Lambda^\cap$}
+
+
+\subsubsection{Obtención de la ecuación que define a $\Pi^\perp$}
+
+
+Podemos expresar nuestra recién encontrada $\Lambda^\cap$ de la siguiente manera,
+si tomamos
+$\vec{x} = (x, y, z)$,
+$\vec{u} = (0,4,2)$ y
+$\vec{v} = (1,-2,-2)$:
+$$\vec{x} = \vec{u} + \lambda\vec{v}$$\\
+O, en la extraña notación de los profesores de tu alumna ($\vec{x} = [\vec{v}] + \vec{u}$)`:
+$$
+  \vec{x} = [(1,-2,-2)] + (0,4,2)
+$$
+Prestemos atención al hecho de que $\vec{v} = (1,-2,-2)$
+es el vector \textbf{director} de $\Lambda^\cap$ y el vector \textbf{normal} a
+infinitos planos que llenan el espacio $\mathbb{R}^3$.
+Esos planos tienen en común una ecuación que vamos a encontrar a continuación.
+
+Recordemos que la ecuacion general del plano es $ax+by+cz=d$. De ella podemos extraer el vector $\vec{c} = (a,b,c)$. Y entonces podemos
+expresar la ecuación general del plano como $\langle(a,b,c),(x,y,z)\rangle = d$. Si llamamos $\vec{x}$ a $(x,y,z)$ podemos expresar dicha ecuación
+como $\langle\vec{x},\vec{c}\rangle = d$. En el origen, que es el lugar en donde $d=0$, queda claro por qué el vector $\vec{c}$ de los coeficientes se
+llama vector \textbf{normal} al plano.
+
+Si buscamos un plano ortogonal a nuestra $\Lambda^\cap$, entonces, ya conocemos sus coeficientes $(a,b,c)$ porque son los los valores del
+vector director de $\Lambda^\cap$ que son  $(1,-2,-2)$. Es decir $a=1$, $b=-2$ y $c=-2$.
+
+Podemos reemplazarlos entonces en la ecuacion general para ir avanzando en nuestra búsqueda:
+
+\begin{flalign*}
+  ax+by+cz&=d \\
+  (1)x+(-2)y+(-2)z&=d \\
+  x-2y-2z&=d \\
+\end{flalign*}
+
+Ok. Los infinitos planos normales a $\Lambda^\cap$ se especifican con la ecuación que tienen en común ($x-2y-2z=d$).
+Recordemos que $x$, $y$ y $z$ son las variables independientes, pueden tener cualquier valor en $\mathbb{R}^3$,
+aunque solo aquellos valores que cumplen $x-2y-2z=d$ hacen que el punto que definen
+esté en el plano determinado por un cierto valor de $d$.
+
+¿Cual es, entonces, el valor de $d$ que determina el plano $\Pi^\perp$ buscado?
+
+Afortunadamente, por la definición del problema ("...y que pase por $(4,2,-1)$"),
+tenemos un punto que sabemos que está en $\Pi^\perp$. Vamos a usarlo entonces para que queden determinados $x$, $y$ y $z$ en la ecuación de
+los planos ortogonales a $\Lambda^\cap$ y así quede aislada la única incógnita, $d$.
+
+\begin{flalign*}
+  x-2y-2z&=d \\
+  d&=x-2y-2z \\
+  d&=(4)-2(2)-2(-1) \\
+  d&=4-4+2 \\
+  d&=2
+\end{flalign*}
+
+Conocemos ahora la única incógita que nos quedaba ($d$), sabemos ahora que su valor es $2$, por lo tanto nuestro plano $\Pi^\perp$ es:
+\begin{flalign}
+  \Pi^\perp = \{ (x,y,z) \in \mathbb{R}^3 \mid x-2y-2z=2\} \label{eq:resultado}
+\end{flalign}
+
+\subsubsection{Verificación de que $\Pi^\perp \perp \Lambda^\cap$}
+Es directa y bastante obvia, el vector director de $\Lambda^\cap$
+es $\vec{v} = (1,-2,-2)$ que coincide con el vector normal de $\Pi^\perp$ $\rightarrow$  $x-2y-2z=-2$
+que es $(1,-2,-2)$.
+
+
+\subsubsection{Verificación de que $(4,2,-1) \in \Pi^\perp$}
+
+\begin{flalign*}
+  x-2y-2z&=2 \\
+  (4)-2(2)-2(-1)&=2 \\
+  4-4+2&=2 \\
+  2&=2
+\end{flalign*}
+
+Eso ya lo sabíamos.
+
+\subsubsection{¿Es (4,2,-1) la intersección de $\Pi^\perp$ y  $\Lambda^\cap$?}
+Veamos:
+\begin{flalign*}
+  x &= \lambda && \\
+  y &= -2\lambda + 4 && \\
+  z &= -2\lambda+2 \\
+  x-2y-2z&=2
+\end{flalign*}
+se tienen que cumplir todas en  $\Pi^\perp \cap \Lambda^\cap$
+
+Aislamos y encontramos el valor de $\lambda$ reemplazando, en la ecuación del plano $\Pi^\perp$, las coordenadas por sus correspondientes funciones de $\lambda$:
+\begin{flalign*}
+  x-2y-2z&=2 \\
+  \lambda-2(-2\lambda + 4)-2(-2\lambda+2)&=2 \\
+  \lambda+4\lambda - 8+4\lambda-4&=2 \\
+  (1+4+4)\lambda &= 2+8+4 \\
+  9\lambda &= 14 \\
+  \lambda &= \frac{14}{9}
+\end{flalign*}
+
+Ahora que sabemos $\lambda$ de $\Pi^\perp \cap \Lambda^\cap$ podemos obtener sus coordenadas.
+
+\begin{flalign*}
+  && x = \lambda \\
+  && x = \frac{14}{9} && x = \frac{14}{9} \\
+  && y = -2\lambda + 4 \\
+  && y = -2\frac{14}{9} + 4 && y = \frac{8}{9}\\
+  && z = -2\lambda+2 \\
+  && z = -2\frac{14}{9} + 2 && z = -\frac{10}{9}\\
+\end{flalign*}
+
+Llamemos $P_i$ a la intersección $\Pi^\perp \cap \Lambda^\cap$. Acabamos de obtener:
+\begin{flalign}
+  P_i = (\frac{14}{9},\frac{8}{9},-\frac{10}{9})
+\end{flalign}
+
+¿Está bien hecha la cuenta? Veamos si $P_i \in \Pi^\perp$
+
+\begin{flalign*}
+  x-2y-2z&=2 \\
+  (\frac{14}{9})-2(\frac{8}{9})-2(-\frac{10}{9})&=2 \\
+  \frac{14}{9}-\frac{16}{9}+\frac{20}{9}&=2 \\
+  \frac{18}{9}&=2 \\
+  2&=2
+\end{flalign*}
+
+Efectivamente $P_i \in \Pi^\perp$. Por lo tanto la respuesta a la pregunta ¿(4,2,-1)=$\Pi^\perp\cap\Lambda^\cap$? es \textbf{no}, $(4,2,-1)$ no es la intersección
+de $\Pi^\perp$ y  $\Lambda^\cap$, ese honor le corresponde a $(\frac{14}{9},\frac{8}{9},-\frac{10}{9})$.
+
+
+\section{Respuesta}
+Siendo $\Pi$ $\rightarrow$ $4x-y+3z=2$ y $\Pi' \rightarrow 2x+2y-z=6$
+y $\Lambda^\cap = \Pi \cap \Pi'$.
+
+
+
+
+Buscábamos
+$\Pi^\perp \mid \Pi^\perp \perp \Lambda^\cap, (4,2,-1) \in \Pi^\perp$.
+
+Lo encontramos. Es: $\Pi^\perp = \{ (x,y,z) \in \mathbb{R}^3 \mid x-2y-2z=2\}$. Está en la ecuación (\ref{eq:resultado}).
+
+Misión cumplida.
+
+\newpage
+
+\tableofcontents
+
+\end{document}
+
