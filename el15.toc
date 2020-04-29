@@ -6,11 +6,12 @@
 \contentsline {subsection}{\numberline {2.3}La intersección $\Lambda ^\cap $}{1}%
 \contentsline {subsubsection}{\numberline {2.3.1}Operaciones para poner $x$, $y$ y $z$ en función de $\lambda $. Obtención de la forma paramétrica de la recta de intersección $\Lambda ^\cap $.}{2}%
 \contentsline {subsubsection}{\numberline {2.3.2}Forma vectorial de $\Lambda ^\cap $ en función de $\lambda $}{3}%
-\contentsline {subsubsection}{\numberline {2.3.3}Verificación de que $\Lambda ^\cap $ es realmente la intersección entre $\Pi $ y $\Pi '$}{3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Conclusión de la búsqueda de la intersección $\Lambda ^\cap $}{3}%
-\contentsline {subsection}{\numberline {2.4}Plano tangente $\Pi ^\perp $ a la intersección $\Lambda ^\cap $}{3}%
-\contentsline {subsubsection}{\numberline {2.4.1}Obtención de la ecuación que define a $\Pi ^\perp $}{3}%
+\contentsline {subsubsection}{\numberline {2.3.3}Geogebra me da otra ecuación}{3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Verificación de que $\Lambda ^\cap $ es realmente la intersección entre $\Pi $ y $\Pi '$}{3}%
+\contentsline {subsubsection}{\numberline {2.3.5}Conclusión de la búsqueda de la intersección $\Lambda ^\cap $}{3}%
+\contentsline {subsection}{\numberline {2.4}Plano tangente $\Pi ^\perp $ a la intersección $\Lambda ^\cap $}{4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Obtención de la ecuación que define a $\Pi ^\perp $}{4}%
 \contentsline {subsubsection}{\numberline {2.4.2}Verificación de que $\Pi ^\perp \perp \Lambda ^\cap $}{4}%
-\contentsline {subsubsection}{\numberline {2.4.3}Verificación de que $(4,2,-1) \in \Pi ^\perp $}{4}%
+\contentsline {subsubsection}{\numberline {2.4.3}Verificación de que $(4,2,-1) \in \Pi ^\perp $}{5}%
 \contentsline {subsubsection}{\numberline {2.4.4}¿Es (4,2,-1) la intersección de $\Pi ^\perp $ y $\Lambda ^\cap $?}{5}%
-\contentsline {section}{\numberline {3}Respuesta}{5}%
+\contentsline {section}{\numberline {3}Respuesta}{6}%
